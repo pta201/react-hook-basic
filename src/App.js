@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.scss";
+import ColorBox from "./Components/ColorBox/ColorBox";
+import TodoList from "./Components/TodoList/TodoList";
 
 function App() {
+  const [todoList, setTodoList] = useState([
+    { id: 1, title: "I love Easy Frontend" },
+    { id: 2, title: "We love Easy Frontend" },
+    { id: 3, title: "They love Easy Frontend" },
+  ]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <h1>Welcome to React hooks!</h1>
+      <TodoList todos={todoList} />
     </div>
   );
 }
